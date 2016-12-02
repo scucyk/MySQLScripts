@@ -1,3 +1,5 @@
+#!/usr/bin/env python
 # coding:utf-8
 
-print "hello,beijing"
+
+print 'This is test.py'
