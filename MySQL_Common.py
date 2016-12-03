@@ -3,6 +3,21 @@
 
 import MySQLdb
 
-print 'this is an file'
 
-print 'this is 2nd line'
+conn = MySQLdb.connect(host='127.0.0.1', port=3306, user='dba_admin', passwd='12345678', db='db_monitor')
+cur = conn.cursor()
+
+statement = 'select id, name, address from test_tb1'
+
+cur.execute('set names utf8')
+cur.execute(statement)
+result = cur.fetchall()
+
+for i in xrange(len(result)):
+        try:
+                print result[i][1], result[i][2], result[i][3]
+        except Exception, msg:
+                print msg
+
+cur.close()
+conn.close()
