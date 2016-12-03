@@ -15,7 +15,7 @@ result = cur.fetchall()
 
 for i in xrange(len(result)):
         try:
-                print result[i][1], result[i][2], result[i][3]
+                print result[i][0], result[i][1], result[i][2]
         except Exception, msg:
                 print msg
 
